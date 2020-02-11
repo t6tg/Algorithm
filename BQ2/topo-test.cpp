@@ -22,3 +22,36 @@ void DFS(int u, bool visited[], stack<int> &stk)
     }
     stk.push(u);
 }
+void topo()
+{
+    stack<int> stk;
+    bool vis[1000] = {true};
+    for (int i = 0; i <= n; i++)
+    {
+        if (!vis[i])
+        {
+            DFS(i, vis, stk);
+        }
+    }
+    while (!stk.empty())
+    {
+        if (stk.top() == arr[stk.top()])
+        {
+            cout << stk.top() << " ";
+        }
+        stk.pop();
+    }
+}
+int main()
+{
+    int x, y;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> x >> y;
+        graph[x][y] = 1;
+        arr[x] = x;
+        arr[y] = y;
+    }
+    topo();
+}
