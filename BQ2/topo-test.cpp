@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stack>
-#define NODE 1000
+#define NODE 10000
 using namespace std;
 
 int graph[NODE][NODE] = {{0}};
@@ -22,10 +22,11 @@ void DFS(int u, bool visited[], stack<int> &stk)
     }
     stk.push(u);
 }
+
 void topo()
 {
     stack<int> stk;
-    bool vis[1000] = {true};
+    bool vis[10000] = {false};
     for (int i = 0; i <= n; i++)
     {
         if (!vis[i])
@@ -42,6 +43,7 @@ void topo()
         stk.pop();
     }
 }
+
 int main()
 {
     int x, y;
