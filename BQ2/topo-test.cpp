@@ -1,10 +1,11 @@
 #include <iostream>
 #include <stack>
 #define NODE 10000
+
 using namespace std;
 
 int graph[NODE][NODE] = {{0}};
-int arr[1000] = {-1};
+int arr[NODE] = {-1};
 int n;
 
 void DFS(int u, bool visited[], stack<int> &stk)
@@ -26,7 +27,7 @@ void DFS(int u, bool visited[], stack<int> &stk)
 void topo()
 {
     stack<int> stk;
-    bool vis[10000] = {false};
+    bool vis[NODE] = {false};
     for (int i = 0; i <= n; i++)
     {
         if (!vis[i])

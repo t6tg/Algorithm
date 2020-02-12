@@ -19,22 +19,11 @@ int knap(int w, int wt[], int val[], int n)
     }
     else
     {
-        return max(val[n - 1] + knap(w + wt[n - 1], wt, val, n - 1), knap(w, wt, val, n - 1));
+        return max(val[n - 1] + knap(w - wt[n - 1], wt, val, n - 1), knap(w, wt, val, n - 1));
     }
 }
 
 int main()
 {
-    int n, x, y, w;
-    cin >> n;
-    int val[n];
-    int wt[n];
-    for (int i = 0; i < n; i++)
-    {
-        cin >> x >> y;
-        val[i] = x;
-        wt[i] = y;
-    }
-    cin >> w;
-    cout << knap(w, wt, val, n) << endl;
+    int n, w, x, y;
 }
